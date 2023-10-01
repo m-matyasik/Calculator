@@ -1,0 +1,24 @@
+﻿@model Calculator.Models.CalculatorModel
+@{
+    ViewData["Title"] = "Calculator";
+}
+<form action="Calculator">
+    <div class="form-text">
+        First number:   <input type="text" class="form-control" asp-for="firstNumber" /><br />
+    </div>
+    <div class="form-text">
+        Second number:  <input type="text" class="form-control" asp-for="secondNumber" /><br /><br />
+    </div>
+    <div class="form-text">
+        <label for="result">Result</label>
+        <input type="text" asp-for="result" value="@Model.result"/> <br />
+    </div>
+
+    <div class="p-2 m-2">
+    <button type="submit" class="btn btn-primary" id="add" value="add" name="calculate">+</button>
+    <button type="submit" class="btn btn-primary" id="sub" value="sub" name="calculate">-</button>
+    <button type="submit" class="btn btn-primary" id="mul" value="mul" name="calculate">*</button>
+    <button type="submit" class="btn btn-primary" id="div" value="div" name="calculate">/</button>
+    </div>
+</form>
+@ViewBag.DivisionByZeroError
